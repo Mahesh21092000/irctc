@@ -8,12 +8,12 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form validation logic here
+    
     axios
       .post("http://localhost:8081/signup", values)
       .then((res) => {
         console.log(res.data);
-        navigate("/login"); // Redirect to login after successful signup
+        navigate("/login"); 
       })
       .catch((err) => console.log(err));
   };

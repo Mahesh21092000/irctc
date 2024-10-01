@@ -11,8 +11,8 @@ function Login() {
     e.preventDefault();
     axios.post('http://localhost:8081/login', values)
       .then(res => {
-        localStorage.setItem('token', res.data.token);  // Store JWT token
-        navigate("/userdashboard");  // Redirect to dashboard
+        localStorage.setItem('token', res.data.token);  
+        navigate("/userdashboard");  
       })
       .catch(err => setError("Invalid login credentials"));
   };

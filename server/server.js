@@ -8,18 +8,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const saltRounds = 10; // For hashing passwords
+const saltRounds = 10; 
 const jwtSecret = 'E0vP7mqL8yR2k5XJpV9qkO0hP6TzX';
 
-// MySQL database connection
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Mahesh@123", // Update with your MySQL password
-    database: "mahesh", // Update with your database name
+    password: "Mahesh@123", 
+    database: "mahesh", 
 });
 
-// Connect to MySQL
+
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL:', err);
@@ -32,7 +32,7 @@ db.connect((err) => {
 app.post('/signup', (req, res) => {
     const { name, email, password } = req.body;
 
-    // Hash password before storing
+    
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) return res.status(500).json({ error: "Error hashing password" });
 
@@ -75,7 +75,7 @@ app.post('/login', (req, res) => {
 app.post('/adminsignup', (req, res) => {
     const { name, email, password } = req.body;
 
-    // Hash password before storing
+    
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) return res.status(500).json({ error: "Error hashing password" });
 

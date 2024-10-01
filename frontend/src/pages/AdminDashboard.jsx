@@ -42,7 +42,7 @@ function AdminDashboard() {
         );
       } else {
         await axios.post("http://localhost:8081/admindashboard", trainData);
-        // Optionally, add the new train to the local state without fetching again
+        
         setTrains([...trains, trainData]);
       }
       setTrainData({

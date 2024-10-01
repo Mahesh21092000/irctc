@@ -19,7 +19,7 @@ function Dashboard() {
   }, []);
 
   const RandomNumber = () => {
-    return Math.floor(Math.random() * 9000) + 1000; // Generates a random number between 1000 and 9999
+    return Math.floor(Math.random() * 9000) + 1000; 
   };
 
   const Increment = () => {
@@ -41,10 +41,10 @@ function Dashboard() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
     const randomNum = RandomNumber();
 
-    // Alert with form details and random number
+   
     alert(`Train Booking Details:\n
       From: ${formData.from}\n
       To: ${formData.to}\n
@@ -55,11 +55,8 @@ function Dashboard() {
       Booking Reference Number: ${randomNum}
     `);
 
-    // Here, you can store the data to your desired component or API
-    // For example, if you have a function to save data:
-    // saveBooking({ ...formData, seats: count, referenceNumber: randomNum });
+  
 
-    // Reset form and count after submission
     setFormData({
       from: "",
       to: "",

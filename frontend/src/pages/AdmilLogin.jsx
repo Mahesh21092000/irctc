@@ -11,8 +11,8 @@ function AdminLogin() {
     e.preventDefault();
     axios.post('http://localhost:8081/adminlogin', values)
       .then(res => {
-        localStorage.setItem('token', res.data.token);  // Store JWT token
-        navigate("/admindashboard");  // Redirect to dashboard
+        localStorage.setItem('token', res.data.token);  
+        navigate("/admindashboard");  
       })
       .catch(err => setError("Invalid login credentials"));
   };
